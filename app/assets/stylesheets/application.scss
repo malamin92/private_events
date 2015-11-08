@@ -20,3 +20,12 @@
 .center {
 	text-align: center;
 }
+
+body {
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
