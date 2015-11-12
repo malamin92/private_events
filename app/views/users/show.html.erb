@@ -4,5 +4,20 @@
 		<div class="col-md-4">
 			<h1><%= @user.name %></h1>
 		</div>
+		<div class="col-md-8">
+		<% if @user.created_events.any? %>
+			<h1>Events</h1>
+			<% @events.each do |event| %>
+			<ul class="event-list">
+				<li>
+					<h3><%= event.title %></h3>
+					<h5><%= event.date %></h5>
+					<h5><%= event.location %></h5>
+					<p><%= event.description %></p>
+				</li>
+			</ul>
+			<% end %>
+		<% end %>
+		</div>
 	</div>
 </div>
