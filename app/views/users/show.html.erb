@@ -9,10 +9,9 @@
 			<h1>Events</h1>
 			<% @events.each do |event| %>
 			<ul class="event-list">
-				<li>
-					<h3><%= event.title %></h3>
-					<h5><%= event.date %></h5>
-					<h5><%= event.location %></h5>
+				<li class="list-group-item">
+					<h3><%= link_to event.title, event %></h3>
+					<h5>Date: <%= event.date %> | Location: <%= event.location %></h5>
 					<p><%= event.description %></p>
 				</li>
 			</ul>

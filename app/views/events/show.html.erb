@@ -1,0 +1,12 @@
+<% provide(:title, @event.title) %>
+<div class="container">
+	<div class="row jumbotron">
+		<div class="cold-md-8 col-md-offset-2">
+			<h1><%= @event.title %></h1>
+			<h3>Date: <%= @event.date %> Location: <%= @event.location %></h3>
+			<h5>Creator: <%= link_to @host.name, @host %> </h5>
+			<h3></h3>
+			<p><%= @event.description %></p>
+		</div>
+	</div>
+</div>
