@@ -16,10 +16,11 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+		@host = @event.creator
 	end
 
 	def index
-		@events = Event.all
+		@events = Event.all.order(created_at: :desc)
 	end
 
 
