@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 	def show
 		@event = Event.find(params[:id])
 		@host = @event.creator
+		@attendees = @event.attendees
 	end
 
 	def index
