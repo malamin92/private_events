@@ -7,6 +7,12 @@
 			<h5>Creator: <%= link_to @host.name, @host %> </h5>
 			<h3></h3>
 			<p><%= @event.description %></p>
+			<% if @attendees.any? %>
+				<h3>Attending Guests</h3>
+				<% @attendees.each do |attendee| %>
+					<h5><%= link_to attendee.name, attendee %></h5>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>
