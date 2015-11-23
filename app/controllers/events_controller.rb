@@ -18,10 +18,13 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		@host = @event.creator
 		@attendees = @event.attendees
+		
 	end
 
 	def index
 		@events = Event.all.order(created_at: :desc)
+		@past_events = Event.past
+		@upcoming_events = Event.future
 	end
 
 
