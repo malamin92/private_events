@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@events = @user.created_events.order(created_at: :desc)
 		@attended_events = @user.attended_events
+		@upcoming_events = @user.attended_events.to_a.select{|event| event.date > Time.zone.now }
+		@past_events = @user.attended_events.select{|event| event.date < Time.zone.now}
 	end
 
 	private
