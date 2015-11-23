@@ -20,10 +20,10 @@
 		<% end %>
 		</div>
 		<div class="col-md-4">
-			<% if @attended_events.any? %>
+			<% if @upcoming_events.any? %>
 				<h1>Attending:</h1>
 				<ul class="event-list">
-				<% @attended_events.each do |event| %>
+				<% @upcoming_events.each do |event| %>
 					<li class="list-group-item">
 						<h3><%= link_to event.title %></h3>
 						<h5><%= event.date %> | <%= event.location %></h5>
@@ -52,7 +52,7 @@
 			<% end %>
 		</div>
 		<div class="col-md-6">
-			<% if @past_events.any? %>
+			<% if @upcoming_events.any? %>
 			<h1>Future Events:</h1>
 				<ul class="event-list">
 					<% @upcoming_events.each do |event| %>
